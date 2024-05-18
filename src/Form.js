@@ -13,7 +13,7 @@ export default function Form({ onAddItems }) {
     const newItem = {
       description,
       quantity,
-      amount,
+      amount: Number(amount) * quantity,
       packed: false,
       id: Date.now(),
     };
@@ -50,7 +50,7 @@ export default function Form({ onAddItems }) {
         type="text"
         placeholder="Amount..."
         value={amount}
-        onChange={(e) => setAmount(Number(e.target.value))}
+        onChange={(e) => setAmount(e.target.value.toFix(2))}
       />
       <button>Add</button>
     </form>

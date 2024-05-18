@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Stats from "./Stats";
 import Form from "./Form";
 import Logo from "./Logo";
-import PackingList from "./PackingList";
+import ShoppingList from "./ShoppingList";
 
 // const initialItems = [
 //   { id: 1, description: "Passports", quantity: 2, packed: false },
@@ -41,7 +41,7 @@ export default function App() {
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <PackingList
+      <ShoppingList
         items={items}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Item from "./Item";
 
-export default function PackingList({
+export default function ShoppingList({
   items,
   onDeleteItem,
   onToggleItem,
