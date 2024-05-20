@@ -46,6 +46,9 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - CSS custom properties
+- [Sass](https://sass-lang.com/) - Preprocessor scripting language
+- Flexbox
+- CSS Grid
 - Mobile-Responsive Design
 - JavaScript - Scripting language
 - [React](https://reactjs.org/) - JS library
