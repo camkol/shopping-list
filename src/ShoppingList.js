@@ -43,7 +43,7 @@ export default function ShoppingList({
         <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
           <option value="input">Sort by input order</option>
           <option value="description">Sort by description</option>
-          <option value="packed">Sort by packed status</option>
+          <option value="packed">Sort by found status</option>
           <option value="costLow">Sort by cost(from Low)</option>
           <option value="costHigh">Sort by cost(from High)</option>
         </select>
