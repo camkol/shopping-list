@@ -24,7 +24,7 @@ export default function Stats({ items }) {
           ? "You got everything ready!"
           : `🛒 You have ${numItems} items on your list, and you already found
           ${numPacked} (${percentage}%)`}{" "}
-        (Predicted total: <strong>${totalPrice}</strong>)
+        (Predicted total: <strong>${totalPrice.toFixed(2)}</strong>)
       </em>
     </footer>
   );

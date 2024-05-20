@@ -1,16 +1,18 @@
-$color_1: #5a3e2b;
+$color_1: lightblue;
 $color_2: #ffebb3;
+$color_3: blue;
+$color_4: red;
 $font-family_1: sans-serif;
 $font-family_2: "Quicksand";
-$font-family_3: "Monoton";
+$font-family_3: "Luckiest Guy";
 $font-family_4: inherit;
-$background-color_1: #f4a226;
-$background-color_2: #e5771f;
+$background-color_1: white;
+$background-color_2: red;
 $background-color_3: #ffebb3;
-$background-color_4: #76c7ad;
-$background-color_5: #5a3e2b;
+$background-color_4: #011c13;
+$background-color_5: BLUE;
 
-@import "https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap";
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand:wght@300..700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -72,7 +74,7 @@ button {
 }
 select {
   background-color: $background-color_3;
-  color: $color_1;
+  color: $color_3;
   font-family: $font-family_4;
   border: none;
   border-radius: 10rem;
@@ -83,7 +85,7 @@ select {
 }
 input {
   background-color: $background-color_3;
-  color: $color_1;
+  color: $color_3;
   font-family: $font-family_4;
   border: none;
   border-radius: 10rem;
@@ -134,6 +136,7 @@ input {
 }
 .actions {
   button {
+    color: $color_4;
     text-transform: uppercase;
     padding: 0.8rem 2.4rem;
     font-size: 1.4rem;
@@ -151,4 +154,33 @@ input[type="checkbox"] {
   text-align: center;
   font-weight: 700;
   padding: 3.2rem 0;
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 5.5rem;
+    word-spacing: normal;
+    padding: 12px 0;
+    span {
+      display: none;
+    }
+  }
+  .add-form {
+    h3 {
+      margin: 0 16px;
+    }
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    button {
+      margin: 0;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .add-form {
+    flex-wrap: wrap;
+  }
 }
