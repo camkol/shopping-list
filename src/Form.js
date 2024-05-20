@@ -13,7 +13,7 @@ export default function Form({ onAddItems }) {
     const newItem = {
       description,
       quantity,
-      amount: Number(amount) * quantity,
+      amount: (Number(amount) * quantity).toFixed(2),
       packed: false,
       id: Date.now(),
     };
@@ -47,10 +47,11 @@ export default function Form({ onAddItems }) {
       />
       <input
         className="amount"
-        type="text"
+        type="number"
+        step="0.01"
         placeholder="Amount..."
         value={amount}
-        onChange={(e) => setAmount(e.target.value.toFix(2))}
+        onChange={(e) => setAmount(e.target.value)}
       />
       <button>Add</button>
     </form>

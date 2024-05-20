@@ -1,11 +1,15 @@
 import React from "react";
 
 export default function Stats({ items }) {
+  const totalPrice = items.reduce(
+    (total, item) => total + Number(item.amount),
+    0
+  );
+
   if (!items.length)
     return (
       <p className="stats">
-        {" "}
-        <em>Start adding items to your shopping list 🛍</em>{" "}
+        <em>Start adding items to your shopping list 🛒</em>{" "}
       </p>
     );
 
@@ -18,8 +22,9 @@ export default function Stats({ items }) {
       <em>
         {percentage === 100
           ? "You got everything ready!"
-          : `💼 You have ${numItems} items on your list, and you already packed
-          ${numPacked} (${percentage}%)`}
+          : `🛒 You have ${numItems} items on your list, and you already found
+          ${numPacked} (${percentage}%)`}{" "}
+        (Predicted total: <strong>${totalPrice}</strong>)
       </em>
     </footer>
   );

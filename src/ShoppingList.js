@@ -23,6 +23,9 @@ export default function ShoppingList({
       .slice()
       .sort((a, b) => Number(a.packed) - Number(b.packed));
 
+  if (sortBy === "costLow")
+    sortedItems = items.slice().sort((a, b) => a.amount - b.amount);
+
   return (
     <div className="list">
       <ul>
@@ -41,6 +44,8 @@ export default function ShoppingList({
           <option value="input">Sort by input order</option>
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed status</option>
+          <option value="costLow">Sort by cost(from Low)</option>
+          <option value="costHigh">Sort by cost(from High)</option>
         </select>
         <button onClick={onClearList}>Clear list</button>
       </div>
