@@ -6,6 +6,7 @@ export default function ShoppingList({
   onDeleteItem,
   onToggleItem,
   onClearList,
+  onEditItem,
 }) {
   const [sortBy, setSortBy] = useState("input");
 
@@ -34,6 +35,7 @@ export default function ShoppingList({
             item={item}
             onDeleteItem={onDeleteItem}
             onToggleItem={onToggleItem}
+            onEditItem={onEditItem}
             key={item.id}
           />
         ))}

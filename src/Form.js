@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
-  const [amount, setAmount] = useState("");
+  const [unitPrice, setUnitPrice] = useState("");
   const [quantity, setQuantity] = useState(1);
 
   function handleSubmit(e) {
@@ -13,7 +13,8 @@ export default function Form({ onAddItems }) {
     const newItem = {
       description,
       quantity,
-      amount: (Number(amount) * quantity).toFixed(2),
+      unitPrice,
+      amount: (Number(unitPrice) * quantity).toFixed(2),
       packed: false,
       id: Date.now(),
     };
@@ -22,7 +23,7 @@ export default function Form({ onAddItems }) {
     onAddItems(newItem);
 
     setDescription("");
-    setAmount("");
+    setUnitPrice("");
     setQuantity(1);
   }
 
@@ -50,8 +51,8 @@ export default function Form({ onAddItems }) {
         type="number"
         step="0.01"
         placeholder="Amount..."
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
+        value={unitPrice}
+        onChange={(e) => setUnitPrice(e.target.value)}
       />
       <button>Add</button>
     </form>

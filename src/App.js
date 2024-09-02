@@ -31,6 +31,14 @@ export default function App() {
     if (confirmed) setItems([]);
   }
 
+  const handleEditItem = (id, updatedItem) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, ...updatedItem } : item
+      )
+    );
+  };
+
   return (
     <div className="app">
       <Logo />
@@ -40,6 +48,7 @@ export default function App() {
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
         onClearList={handleClearList}
+        onEditItem={handleEditItem}
       />
       <Stats items={items} />
     </div>
