@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
@@ -27,6 +27,12 @@ export default function Form({ onAddItems }) {
     setQuantity(1);
   }
 
+  const inputEl = useRef(null);
+
+  useEffect(function () {
+    inputEl.current.focus();
+  }, []);
+
   return (
     <form className="add-form" onSubmit={handleSubmit}>
       <h3>What groceries do you need?</h3>
@@ -45,6 +51,7 @@ export default function Form({ onAddItems }) {
         placeholder="Item..."
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        ref={inputEl}
       />
       <input
         className="amount"
