@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Stats from "./Stats";
 import Form from "./Form";
 import Logo from "./Logo";
 import ShoppingList from "./ShoppingList";
 
 export default function App() {
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
+  const [items, setItems] = useState(function () {
+    const storedValue = localStorage.getItem("items");
+    return storedValue ? JSON.parse(storedValue) : [];
+  });
 
   function handleAddItems(item) {
     setItems((items) => [...items, item]);
@@ -38,6 +42,12 @@ export default function App() {
       )
     );
   };
+
+  useEffect(() => {
+    if (items !== null) {
+      localStorage.setItem("items", JSON.stringify(items));
+    }
+  }, [items]);
 
   return (
     <div className="app">
