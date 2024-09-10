@@ -3,13 +3,16 @@ import Stats from "./Stats";
 import Form from "./Form";
 import Logo from "./Logo";
 import ShoppingList from "./ShoppingList";
+import { useLocalStorageState } from "./useLocalStorageState";
 
 export default function App() {
+  const [items, setItems] = useLocalStorageState([], "items");
   // const [items, setItems] = useState([]);
-  const [items, setItems] = useState(function () {
-    const storedValue = localStorage.getItem("items");
-    return storedValue ? JSON.parse(storedValue) : [];
-  });
+
+  // const [items, setItems] = useState(function () {
+  //   const storedValue = localStorage.getItem("items");
+  //   return storedValue ? JSON.parse(storedValue) : [];
+  // });
 
   function handleAddItems(item) {
     setItems((items) => [...items, item]);
@@ -43,11 +46,11 @@ export default function App() {
     );
   };
 
-  useEffect(() => {
-    if (items !== null) {
-      localStorage.setItem("items", JSON.stringify(items));
-    }
-  }, [items]);
+  // useEffect(() => {
+  //   if (items !== null) {
+  //     localStorage.setItem("items", JSON.stringify(items));
+  //   }
+  // }, [items]);
 
   return (
     <div className="app">
