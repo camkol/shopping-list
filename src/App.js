@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Stats from "./Stats";
 import Form from "./Form";
 import Logo from "./Logo";
