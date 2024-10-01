@@ -35,12 +35,12 @@ Users should be able to:
 
 ## My process
 
-- This code snippet comprises a simple React application for managing a packing list.
+- This comprises a simple React application for managing a shopping list.
 - It includes components for adding items, displaying the list, and providing statistics.
 - The `App` component serves as the main container, managing state for the list of items and passing down relevant functions to child components.
 - The `Form` component handles user input for adding new items, while the `ShoppingList` component renders the list itself, allowing users to toggle item status and clear the list.
 - Additionally, the `Stats` component calculates and displays statistics based on the found status of items, providing users with feedback on their progress.
-- Overall, this application demonstrates how React components can interact to create a dynamic user interface for managing tasks.
+- To enhance the app's usability, the application utilizes local storage to persist data even when the browser is refreshed or closed. This is done through a custom hook `useLocalStorageState`.
 
 ### Built with
 
